@@ -1,0 +1,3 @@
+/home/eman/Documents/ITI.Repo/7.Fundamental programming using C++/1.menu/build/CMakeFiles/Menu.dir
+/home/eman/Documents/ITI.Repo/7.Fundamental programming using C++/1.menu/build/CMakeFiles/edit_cache.dir
+/home/eman/Documents/ITI.Repo/7.Fundamental programming using C++/1.menu/build/CMakeFiles/rebuild_cache.dir

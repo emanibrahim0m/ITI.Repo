@@ -1,0 +1,3 @@
+/home/eman/Documents/ITI.Repo/7.Fundamental programming using C++/2.magicbox/build/CMakeFiles/MagicBox.dir
+/home/eman/Documents/ITI.Repo/7.Fundamental programming using C++/2.magicbox/build/CMakeFiles/edit_cache.dir
+/home/eman/Documents/ITI.Repo/7.Fundamental programming using C++/2.magicbox/build/CMakeFiles/rebuild_cache.dir

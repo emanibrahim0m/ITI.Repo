@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/Menu.dir/src/lib.cpp.o CMakeFiles/Menu.dir/src/menu.cpp.o -o Menu 
