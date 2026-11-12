@@ -11,6 +11,7 @@
 
 using namespace std;
 
+
 // move curser to x,y axis
 void moveCurser(int x, int y)
 {
@@ -37,9 +38,23 @@ void createMenuItem(int x, int y, int color, const string& text)
     printItem(text);
 }
 
+// Print Full menu items
+void drawMainMenu(int x, int y, int colorCode, const char* menuItems[], int highlightedMenuItem)
+{
+    for (int i = 0; i < 4; i++)
+    {
+        if (i == highlightedMenuItem)
+	        createMenuItem(x, y + i, colorCode, menuItems[i]);
+	    else    
+            createMenuItem(x, y + i, DEFAULTCOLOR, menuItems[i]);
+    }
+}
+
+
+
+
+
 // track user key presses
-
-
 char getKeyPress() {
 #ifdef _WIN32
     // _getch() reads a single character without echoing or waiting for Enter
