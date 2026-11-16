@@ -178,6 +178,11 @@ int main() {
         }
     #endif
     }
+    
+    delete[] employeeList;
+    newEmployeeList = nullptr;
+    employeeList = nullptr;
+    
 
     return 0;   
 }
