@@ -8,30 +8,21 @@
 class shape {
     public: 
         virtual void draw() = 0;
+
+        virtual ~shape() = default;
 };
 
 // point 
 class point : public shape {
-    int x;
-    int y;
-    ansi::Color color;
+    int x = 1;
+    int y = 1;
+    ansi::Color color = {255, 255, 255};
     
     public:
 
-    point() 
-    {
-        this-> x = 1;
-        this-> y = 1;
-        this-> color = {255, 255, 255};;
-    }
+    point() = default;
 
-    point(int x, int y)
-    {
-        this-> x = x;
-        this-> y = y;
-    }
-
-    point(int x, int y, ansi::Color color)
+    point(int x, int y, ansi::Color color = {255, 255, 255})
     {
         this-> x = x;
         this-> y = y;
@@ -52,6 +43,11 @@ class line : public shape {
     bool filled;
 
     public:
+    line()
+    {
+        this-> pointOne = point(1, 1);
+        this-> pointTwo = point(1, 1);
+    }
     line(point pointOne, point pointTwo, ansi::Color color, bool filled)
     {
         this-> pointOne = pointOne;
@@ -150,10 +146,11 @@ class text : public shape {
     ansi::Color color;
 
     public:
-        text(point start, const std::string& content)
+        text(point start, const std::string& content, ansi::Color color = {255, 255, 255})
         {
             this->start = start;
             this->content = content;
+            this->color = color;
         }
 
         void draw() override;
