@@ -51,12 +51,13 @@ class LinkedList {
         {
             if(track == index)
             {
+                cout << "Found: ";
                 return temp-> data;
             }            
             track++;
             temp = temp-> NextNode;
         }
-        cout << "Found: " << endl;
+        cout << "Not Found." << endl;
         return 0;
     }
 
