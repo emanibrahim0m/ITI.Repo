@@ -20,9 +20,9 @@ class Queue_Array {
 
         bool isFull()
         {
-            if (back == arrSize - 1)
-                return front == 0;
-            return back + 1 == front;
+            if ((back == arrSize - 1 && front == 0) || (back + 1 == front))
+                return true;
+            return false;
         }
 
         bool isEmpty()
