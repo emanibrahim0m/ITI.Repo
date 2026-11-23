@@ -13,7 +13,7 @@ class Queue_Array {
 
         Queue_Array(int size) 
         {
-            front = 0; back = 0; 
+            front = -1; back = -1; 
             arrSize = size;
             arr = new int [size];
         }
@@ -27,60 +27,54 @@ class Queue_Array {
 
         bool isEmpty()
         {   
-            return front == back;
+            return front == -1;
         }
 
         void enQueue(int data)
         {
-            if (isFull())
-                return;
-            if (back == arrSize - 1)
-                back = 0;
-            else 
-                back++;
+            if (isFull()) return;
+            else if (isEmpty())
+            {
+                front = 0; back = 0;
+            }
+            else
+            {
+                back = (back + 1) % arrSize;
+            }
             arr[back] = data;
         }
 
         void deQueue()
         {
-            if (isEmpty())
-                return;
-            if (front == arrSize - 1)
-                front = 0;
+            if (isEmpty()) return;
+            else if (front == back)
+            {
+                front = -1; back = -1;
+            }
             else
-                front++;
+            {
+                front = (front + 1) % arrSize;
+            }
         }
 
         void display()
         {
-            if (isEmpty())
-            return;
-
+            if (isEmpty()) return;
             int tmp = front;
-            while (tmp != back)
+            while (tmp != (back + 1) % arrSize)
             {
-                if (tmp == arrSize - 1)
-                    tmp = 0;
-                else
-                    tmp++;
-
-                std::cout << arr[tmp] << " ";
+                std::cout << arr[tmp];
+                tmp = (tmp + 1) % arrSize;
             }
         }
 
         int size()
         {
-            int count = 0;
-            int tmp = front;
-            while (tmp != back)
-            {
-                count++;
-                if (tmp == arrSize - 1)
-                    tmp = 0;
-                else
-                    tmp++;
-            }
-            return count;
+            if (isEmpty()) return 0;            
+            if (back >= front)
+            return back - front + 1;
+
+            return (arrSize - front) + (back + 1);
         }
 
         ~Queue_Array()
