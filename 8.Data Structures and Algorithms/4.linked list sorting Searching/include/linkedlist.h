@@ -1,7 +1,18 @@
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
+
+#include <iostream>
+
 struct Node
 {
     int data;
     Node *PreviousNode;
+
+    Node(int x)
+    {
+        data = x;
+        PreviousNode = NULL;
+    }
 };
 
 class LinkedList {
@@ -20,8 +31,7 @@ class LinkedList {
 
         void push(int data)
         {
-            Node *newNode = new Node;
-            newNode-> data = data;
+            Node *newNode = new Node(data);
             newNode->PreviousNode = nullptr;
             if (!head)
             {
@@ -45,6 +55,17 @@ class LinkedList {
                 tmp = tmp-> PreviousNode;
             }
             return counter;
+        }
+
+        void display() 
+        {
+            Node *tmp = head;
+            while(tmp)
+            {
+                std::cout << tmp->data;
+                tmp = tmp->PreviousNode;
+            }
+            std::cout << std::endl;
         }
 
         Node* fNode() const
@@ -75,3 +96,5 @@ class LinkedList {
             tail = nullptr;
         }
 };
+
+#endif
